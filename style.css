@@ -44,22 +44,21 @@ body {
 }
 
 /* ── BREAKING BANNER ── */
+/* Bootstrap alert ger bakgrund/padding – vi skriver bara över färgerna */
 .breaking-banner {
-  background-color: var(--clr-accent);
-  color: var(--clr-paper);
+  background-color: var(--clr-accent) !important;
+  color: var(--clr-paper) !important;
   font-size: 0.82rem;
   letter-spacing: 0.04em;
-  padding: 6px 0;
+  border: none;
 }
 
+/* Bootstrap badge ger form/padding – vi skriver bara över färgerna */
 .breaking-label {
-  background: rgb(251, 255, 0);
-  color: var(--clr-accent);
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 2px;
-  margin-right: 10px;
+  background-color: rgb(251, 255, 0) !important;
+  color: var(--clr-accent) !important;
   font-size: 0.75rem;
+  font-weight: 700;
 }
 
 .breaking-text {
@@ -78,23 +77,27 @@ body {
   letter-spacing: 0.04em;
 }
 
-/* ── MAIN NEWS CARD ── */
+/* ── ARTIKELKORT ── */
+/* Bootstrap card ger struktur – vi skriver över det som ska se ut som tidning */
 .card-main {
-  border: none;
-  border-bottom: 1px solid var(--clr-border);
-  background: transparent;
-  border-radius: 0;
+  border-bottom: 1px solid var(--clr-border) !important;
   margin-bottom: 28px;
-  padding-bottom: 28px;
 }
 
-.card-main .card-category {
+.card-main .card-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Bootstrap badge ger form – vi skriver över färg för kategori-etikett */
+.card-category {
+  background-color: transparent !important;
+  color: var(--clr-accent) !important;
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--clr-accent);
   font-weight: 600;
-  margin-bottom: 6px;
+  border: 1px solid var(--clr-accent);
 }
 
 .card-main .card-title-main {
@@ -127,7 +130,7 @@ body {
   font-style: italic;
 }
 
-/* Hero card (top story) */
+/* Hero card */
 .card-hero .card-title-main {
   font-size: 2.1rem;
 }
@@ -137,7 +140,7 @@ body {
   object-fit: cover;
 }
 
-/* Two-column article cards */
+/* Two-column cards */
 .card-secondary .card-title-secondary {
   font-family: 'Playfair Display', serif;
   font-size: 1.2rem;
@@ -215,7 +218,7 @@ body {
 .sidebar-thumb {
   width: 100%;
   height: 100%;
-  background: white;
+  object-fit: cover;
 }
 
 .sidebar-article-title {
@@ -235,27 +238,24 @@ body {
   color: var(--clr-accent);
 }
 
-/* Popular list */
+/* ── MEST LÄST (Bootstrap list-group ger border/padding/struktur) ── */
 .popular-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   counter-reset: pop;
 }
 
-.popular-list li {
+.popular-list-item {
   counter-increment: pop;
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--clr-border);
+  background: transparent;
+  border-color: var(--clr-border) !important;
+  padding-left: 0;
+  padding-right: 0;
   font-size: 0.88rem;
 }
 
-.popular-list li:last-child { border-bottom: none; }
-
-.popular-list li::before {
+.popular-list-item::before {
   content: counter(pop);
   font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
@@ -265,13 +265,15 @@ body {
   min-width: 28px;
 }
 
-.popular-list a {
+.popular-list-item a {
   color: var(--clr-ink);
   text-decoration: none;
   font-weight: 600;
 }
 
-.popular-list a:hover { color: var(--clr-accent); }
+.popular-list-item a:hover {
+  color: var(--clr-accent);
+}
 
 /* ── NEWSLETTER ── */
 .newsletter-card {
@@ -326,7 +328,9 @@ footer {
   color: #fff;
 }
 
-.footer-brand span { color: var(--clr-accent); }
+.footer-brand span {
+  color: var(--clr-accent);
+}
 
 .footer-tagline {
   font-style: italic;
@@ -359,7 +363,9 @@ footer {
   margin: 0;
 }
 
-.footer-links li { margin-bottom: 8px; }
+.footer-links li {
+  margin-bottom: 8px;
+}
 
 .footer-links a {
   color: #999;
@@ -368,7 +374,9 @@ footer {
   transition: color 0.2s;
 }
 
-.footer-links a:hover { color: #fff; }
+.footer-links a:hover {
+  color: #fff;
+}
 
 .footer-address {
   font-size: 0.82rem;
@@ -392,14 +400,6 @@ footer {
 .social-icon:hover {
   background: var(--clr-accent);
   color: #fff;
-}
-
-.footer-bottom {
-  background: var(--clr-ink);
-  color: #555;
-  font-size: 0.78rem;
-  padding: 14px 0;
-  margin-top: 32px;
 }
 
 /* ── MISC ── */
