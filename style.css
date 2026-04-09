@@ -1,4 +1,4 @@
-/* ── Custom CSS (utöver Bootstrap) ── */
+/*  Custom CSS (utöver Bootstrap)  */
 :root {
   --clr-ink:     #1a1a1a;
   --clr-paper:   #f7f3ec;
@@ -13,7 +13,7 @@ body {
   font-family: 'Source Serif 4', Georgia, serif;
 }
 
-/* ── NAVBAR ── */
+/*  NAVBAR  */
 .navbar-herman-news {
   background-color: var(--clr-ink);
 }
@@ -43,8 +43,7 @@ body {
   color: #fff !important;
 }
 
-/* ── BREAKING BANNER ── */
-/* Bootstrap alert ger bakgrund/padding – vi skriver bara över färgerna */
+/*  BREAKING BANNER  */
 .breaking-banner {
   background-color: var(--clr-accent) !important;
   color: var(--clr-paper) !important;
@@ -53,7 +52,6 @@ body {
   border: none;
 }
 
-/* Bootstrap badge ger form/padding – vi skriver bara över färgerna */
 .breaking-label {
   background-color: rgb(251, 255, 0) !important;
   color: var(--clr-accent) !important;
@@ -65,7 +63,7 @@ body {
   font-weight: 400;
 }
 
-/* ── SECTION HEADING ── */
+/*  SECTION HEADING  */
 .section-heading {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
@@ -77,8 +75,7 @@ body {
   letter-spacing: 0.04em;
 }
 
-/* ── ARTIKELKORT ── */
-/* Bootstrap card ger struktur – vi skriver över det som ska se ut som tidning */
+/*  ARTIKELKORT  */
 .card-main {
   border-bottom: 1px solid var(--clr-border) !important;
   margin-bottom: 28px;
@@ -89,7 +86,6 @@ body {
   padding-right: 0;
 }
 
-/* Bootstrap badge ger form – vi skriver över färg för kategori-etikett */
 .card-category {
   background-color: transparent !important;
   color: var(--clr-accent) !important;
@@ -180,7 +176,7 @@ body {
   color: var(--clr-accent);
 }
 
-/* ── SIDEBAR ── */
+/*  SIDEBAR  */
 .sidebar {
   border-left: 1px solid var(--clr-border);
   padding-left: 24px;
@@ -238,7 +234,6 @@ body {
   color: var(--clr-accent);
 }
 
-/* ── MEST LÄST (Bootstrap list-group ger border/padding/struktur) ── */
 .popular-list {
   counter-reset: pop;
 }
@@ -275,7 +270,7 @@ body {
   color: var(--clr-accent);
 }
 
-/* ── NEWSLETTER ── */
+/*  NEWSLETTER  */
 .newsletter-card {
   background: #efe9df;
   border-radius: 4px;
@@ -314,7 +309,7 @@ body {
   color: #fff;
 }
 
-/* ── FOOTER ── */
+/*  FOOTER  */
 footer {
   background-color: var(--clr-ink);
   color: #ccc;
@@ -402,7 +397,7 @@ footer {
   color: #fff;
 }
 
-/* ── MISC ── */
+/*  MISC  */
 .divider-double {
   border-top: 3px double var(--clr-border);
   margin: 28px 0;
