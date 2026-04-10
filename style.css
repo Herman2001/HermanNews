@@ -207,8 +207,9 @@ body {
   flex-shrink: 0;
   width: 70px;
   height: 70px;
-  background: var(--clr-paper);
-  border: 1px solid var(--clr-border);
+  background: white;
+  border: 2px solid var(--clr-border);
+  border-radius: 0.5rem;
 }
 
 .sidebar-thumb {
