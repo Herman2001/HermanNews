@@ -4,41 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Herman News</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!--NAVBAR-->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-herman-news py-2">
     <div class="container">
-      <a class="navbar-brand navbar-brand-title" href="#">Herman<span>News</span></a>
-
-      <!-- Hamburger Menu-->
-      <button
-        class="navbar-toggler border-0 text-white"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainNav"
-        aria-controls="mainNav"
-        aria-expanded="false"
-        aria-label="Öppna meny"
-      >
+      <a class="navbar-brand navbar-brand-title" href="index.html">Herman<span>News</span></a>
+      <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Öppna meny">
         <i class="bi bi-list fs-2"></i>
       </button>
-
-      <!-- Nav links -->
       <div class="collapse navbar-collapse justify-content-end" id="mainNav">
         <ul class="navbar-nav gap-1 mt-2 mt-lg-0">
           <li class="nav-item"><a class="nav-link nav-link-custom" href="#">Hem</a></li>
@@ -49,13 +28,14 @@
           <li class="nav-item"><a class="nav-link nav-link-custom" href="#">Kultur</a></li>
           <li class="nav-item"><a class="nav-link nav-link-custom" href="#">Vetenskap</a></li>
         </ul>
+        <button class="btn btn-new-article ms-3" onclick="openModal()">
+          <i class="bi bi-plus-lg me-1"></i>Ny artikel
+        </button>
       </div>
     </div>
   </nav>
 
-  <!-- ════════════════════════════════════
-       BREAKING NEWS BANNER
-  ════════════════════════════════════ -->
+  <!-- BREAKING NEWS BANNER -->
   <div class="alert alert-danger breaking-banner rounded-0 mb-0 py-2">
     <div class="container d-flex align-items-center flex-wrap gap-2">
       <span class="badge breaking-label">SENASTE</span>
@@ -68,23 +48,17 @@
     </div>
   </div>
 
-  <!-- ════════════════════════════════════
-       MAIN CONTENT
-  ════════════════════════════════════ -->
+  <!-- MAIN CONTENT -->
   <main class="container my-4">
     <div class="row g-4">
 
-      <!-- ── LEFT: Main news area ── -->
+      <!-- LEFT: Main news area -->
       <div class="col-lg-8">
-        <div class="section-heading">Toppnyheter</div>
 
-        <!-- Hero article -->
+        <!-- Static hero article -->
+        <div class="section-heading">Toppnyheter</div>
         <article class="card card-main card-hero border-0 rounded-0 bg-transparent">
-          <img
-            src="assets/riksdagshuset.jpg"
-            alt="Riksdagshuset i Stockholm"
-            class="card-img-top hero-img"
-          />
+          <img src="assets/riksdagshuset.jpg" alt="Riksdagshuset i Stockholm" class="card-img-top hero-img" onerror="this.style.display='none'" />
           <div class="card-body px-0 pb-0">
             <span class="badge card-category mb-2">Sverige</span>
             <h2 class="card-title card-title-main">
@@ -99,24 +73,16 @@
           </div>
         </article>
 
-        <!-- Two-column articles -->
+        <!-- Two-column static articles -->
         <div class="row g-3 mb-4">
           <div class="col-md-6">
             <article class="card card-main card-secondary h-100 border-0 rounded-0 bg-transparent">
-              <img
-                src="assets/happy-programmer.png"
-                alt="Glad programmerare"
-                class="card-img-top hero-img"
-              />
+              <img src="assets/happy-programmer.png" alt="Glad programmerare" class="card-img-top hero-img" onerror="this.style.display='none'" />
               <div class="card-body px-0 pb-0">
                 <span class="badge card-category mb-2">Teknik</span>
-                <h3 class="card-title card-title-secondary">
-                  <a href="#">Ny funktion lanserad (nästan)</a>
-                </h3>
+                <h3 class="card-title card-title-secondary"><a href="#">Ny funktion lanserad (nästan)</a></h3>
                 <p class="card-text card-excerpt card-excerpt-small">
                   Vi har nästan lanserat en ny funktion. Den fungerar perfekt i teorin, ganska bra i testmiljön och… väldigt äventyrligt i verkligheten.
-                  Utvecklarna säger att allt är under kontroll. Testarna säger "det beror på vad du klickar på".
-                  Hur som helst, håll utkik. Den är nästan redo.
                 </p>
                 <p class="card-text card-meta"><i class="bi bi-clock me-1"></i>31 mars 2026, 08:45</p>
               </div>
@@ -124,18 +90,12 @@
           </div>
           <div class="col-md-6">
             <article class="card card-main card-secondary h-100 border-0 rounded-0 bg-transparent">
-              <img
-                src="assets/happy-people-coffe.webp"
-                alt="Glada kollegor vid kaffemaskinen"
-                class="card-img-top hero-img"
-              />
+              <img src="assets/happy-people-coffe.webp" alt="Glada kollegor vid kaffemaskinen" class="card-img-top hero-img" onerror="this.style.display='none'" />
               <div class="card-body px-0 pb-0">
                 <span class="badge card-category mb-2">Arbetsplats</span>
-                <h3 class="card-title card-title-secondary">
-                  <a href="#">Kaffe maskinen har uppgraderats</a>
-                </h3>
+                <h3 class="card-title card-title-secondary"><a href="#">Kaffe maskinen har uppgraderats</a></h3>
                 <p class="card-text card-excerpt card-excerpt-small">
-                  Efter intensiva förhandlingar med köket har kaffemaskinen nu officiellt uppgraderats från "helt okej" till "farligt bra". Produktiviteten förväntas öka med cirka 37%.
+                  Efter intensiva förhandlingar med köket har kaffemaskinen nu officiellt uppgraderats från "helt okej" till "farligt bra".
                 </p>
                 <p class="card-text card-meta"><i class="bi bi-clock me-1"></i>30 mars 2026, 18:22</p>
               </div>
@@ -145,17 +105,21 @@
 
         <hr class="divider-double" />
 
-        <!-- Article list  -->
-        <div class="section-heading">Fler nyheter</div>
+        <!-- Dynamic articles from localStorage -->
+        <div class="section-heading d-flex justify-content-between align-items-center">
+          <span>Fler nyheter</span>
+          <button class="btn btn-new-article btn-sm" onclick="openModal()">
+            <i class="bi bi-plus-lg me-1"></i>Lägg till
+          </button>
+        </div>
 
+        <!-- Static articles -->
         <article class="card card-main border-0 rounded-0 bg-transparent">
           <div class="card-body px-0 pb-0">
             <span class="badge card-category mb-2">Teknik</span>
-            <h3 class="card-title card-title-list">
-              <a href="#">Utvecklare löser bugg – skapar tre nya direkt efter</a>
-            </h3>
+            <h3 class="card-title card-title-list"><a href="#">Utvecklare löser bugg – skapar tre nya direkt efter</a></h3>
             <p class="card-text card-excerpt">
-              En utvecklare rapporteras ha fixat en bugg på bara fem minuter. Firandet blev dock kortvarigt när tre nya mysteriska buggar dök upp i helt andra delar av koden. Teamet beskriver händelsen som "en klassisk tisdag".
+              En utvecklare rapporteras ha fixat en bugg på bara fem minuter. Firandet blev dock kortvarigt när tre nya mysteriska buggar dök upp i helt andra delar av koden.
             </p>
             <p class="card-text card-meta">
               <i class="bi bi-person me-1"></i>Marcus Pettersson &nbsp;·&nbsp;
@@ -167,11 +131,9 @@
         <article class="card card-main border-0 rounded-0 bg-transparent">
           <div class="card-body px-0 pb-0">
             <span class="badge card-category mb-2">Vetenskap</span>
-            <h3 class="card-title card-title-list">
-              <a href="#">Forskare bekräftar: kaffe fungerar bättre än motivation</a>
-            </h3>
+            <h3 class="card-title card-title-list"><a href="#">Forskare bekräftar: kaffe fungerar bättre än motivation</a></h3>
             <p class="card-text card-excerpt">
-              En ny studie visar att en kopp kaffe ökar produktiviteten betydligt mer än både inspirationstal och färgglada post-it-lappar. Forskarna planerar nu en uppföljning om vad som händer efter kopp nummer fyra.
+              En ny studie visar att en kopp kaffe ökar produktiviteten betydligt mer än både inspirationstal och färgglada post-it-lappar.
             </p>
             <p class="card-text card-meta">
               <i class="bi bi-person me-1"></i>Sofia Eriksson &nbsp;·&nbsp;
@@ -183,11 +145,9 @@
         <article class="card card-main border-0 rounded-0 bg-transparent">
           <div class="card-body px-0 pb-0">
             <span class="badge card-category mb-2">Internet</span>
-            <h3 class="card-title card-title-list">
-              <a href="#">Person öppnar en flik till – lovar att "bara kolla en sak snabbt"</a>
-            </h3>
+            <h3 class="card-title card-title-list"><a href="#">Person öppnar en flik till – lovar att "bara kolla en sak snabbt"</a></h3>
             <p class="card-text card-excerpt">
-              En lokal datoranvändare öppnade ytterligare en webbläsarflik under arbetstid. Vittnen säger att personen mumlade "det tar bara en minut", innan 17 nya flikar och två YouTube-videor senare.
+              En lokal datoranvändare öppnade ytterligare en webbläsarflik under arbetstid. Vittnen säger att personen mumlade "det tar bara en minut".
             </p>
             <p class="card-text card-meta">
               <i class="bi bi-clock me-1"></i>29 mars 2026, 11:30
@@ -195,128 +155,78 @@
           </div>
         </article>
 
+        <!-- Dynamic user articles rendered here -->
+        <div id="user-articles-container"></div>
+
       </div>
 
-      <!--  RIGHT: Sidebar  -->
+      <!-- RIGHT: Sidebar -->
       <aside class="col-lg-4">
         <div class="sidebar">
-
-          <!-- Most read -->
           <div class="section-heading">Mest läst</div>
           <ol class="list-group list-group-flush popular-list mb-4">
-            <li class="list-group-item popular-list-item">
-              <a href="#">Riksdagens Öl lag: Allt du behöver veta</a>
-            </li>
-            <li class="list-group-item popular-list-item">
-              <a href="#">Rekordvärme väntas i Skåne under påsk – SMHI utfärdar varning</a>
-            </li>
-            <li class="list-group-item popular-list-item">
-              <a href="#">Ny studie: 8 timmars sömn minskar risken hälsporre med 30 %</a>
-            </li>
-            <li class="list-group-item popular-list-item">
-              <a href="#">Elbilarna dominerar nu nybilsförsäljningen i Sverige</a>
-            </li>
-            <li class="list-group-item popular-list-item">
-              <a href="#">Sverige vinner VM-guld i curling för damer</a>
-            </li>
+            <li class="list-group-item popular-list-item"><a href="#">Riksdagens Öl lag: Allt du behöver veta</a></li>
+            <li class="list-group-item popular-list-item"><a href="#">Rekordvärme väntas i Skåne under påsk – SMHI utfärdar varning</a></li>
+            <li class="list-group-item popular-list-item"><a href="#">Ny studie: 8 timmars sömn minskar risken hälsporre med 30 %</a></li>
+            <li class="list-group-item popular-list-item"><a href="#">Elbilarna dominerar nu nybilsförsäljningen i Sverige</a></li>
+            <li class="list-group-item popular-list-item"><a href="#">Sverige vinner VM-guld i curling för damer</a></li>
           </ol>
 
           <hr class="divider-double" />
 
-          <!-- Sidebar articles with thumbnails -->
           <div class="section-heading">Herman News direkt</div>
-
           <div class="sidebar-article">
-            <div class="sidebar-article-img">
-              <img src="assets/live.png" alt="Live" class="sidebar-thumb">
-            </div>
+            <div class="sidebar-article-img"><img src="assets/live.png" alt="Live" class="sidebar-thumb" onerror="this.parentElement.style.background='#c0392b'"></div>
             <div>
-              <p class="sidebar-article-title">
-                <a href="#">LIVE: En flock pingviner har tagit över lokala biblioteket.</a>
-              </p>
+              <p class="sidebar-article-title"><a href="#">LIVE: En flock pingviner har tagit över lokala biblioteket.</a></p>
               <p class="card-meta"><i class="bi bi-clock me-1"></i>30 mars 2026</p>
             </div>
           </div>
-
           <div class="sidebar-article">
-            <div class="sidebar-article-img">
-              <img src="assets/live.png" alt="Live" class="sidebar-thumb">
-            </div>
+            <div class="sidebar-article-img"><img src="assets/live.png" alt="Live" class="sidebar-thumb" onerror="this.parentElement.style.background='#c0392b'"></div>
             <div>
-              <p class="sidebar-article-title">
-                <a href="#">LIVE: Forskare bekräftar att måndagar officiellt har blivit olagliga idag.</a>
-              </p>
+              <p class="sidebar-article-title"><a href="#">LIVE: Forskare bekräftar att måndagar officiellt har blivit olagliga idag.</a></p>
               <p class="card-meta"><i class="bi bi-clock me-1"></i>29 mars 2026</p>
             </div>
           </div>
-
           <div class="sidebar-article">
-            <div class="sidebar-article-img">
-              <img src="assets/live.png" alt="Live" class="sidebar-thumb">
-            </div>
+            <div class="sidebar-article-img"><img src="assets/live.png" alt="Live" class="sidebar-thumb" onerror="this.parentElement.style.background='#c0392b'"></div>
             <div>
-              <p class="sidebar-article-title">
-                <a href="#">LIVE: Glassbilen siktad på Mars, utomjordingar köper upp hela lagret.</a>
-              </p>
+              <p class="sidebar-article-title"><a href="#">LIVE: Glassbilen siktad på Mars, utomjordingar köper upp hela lagret.</a></p>
               <p class="card-meta"><i class="bi bi-clock me-1"></i>28 mars 2026</p>
             </div>
           </div>
-
           <div class="sidebar-article">
-            <div class="sidebar-article-img">
-              <img src="assets/live.png" alt="Live" class="sidebar-thumb">
-            </div>
+            <div class="sidebar-article-img"><img src="assets/live.png" alt="Live" class="sidebar-thumb" onerror="this.parentElement.style.background='#c0392b'"></div>
             <div>
-              <p class="sidebar-article-title">
-                <a href="#">LIVE: Skolans kaffemaskin har börjat prata flytande franska med eleverna</a>
-              </p>
+              <p class="sidebar-article-title"><a href="#">LIVE: Skolans kaffemaskin har börjat prata flytande franska med eleverna</a></p>
               <p class="card-meta"><i class="bi bi-clock me-1"></i>27 mars 2026</p>
             </div>
           </div>
 
           <hr class="divider-double" />
 
-          <!-- Newsletter signup -->
           <div class="newsletter-card">
             <div class="card-body p-3">
-              <h6 class="newsletter-heading">
-                <i class="bi bi-envelope-heart me-2"></i>
-                Nyhetsbrev
-              </h6>
-              <p class="newsletter-desc">
-                Få dagens viktigaste nyheter direkt i inkorgen.
-              </p>
-              <input
-                type="email"
-                class="form-control form-control-sm mb-2 newsletter-input"
-                placeholder="din@epost.se"
-              />
-              <button type="button" class="btn btn-sm w-100 newsletter-btn">
-                Prenumerera
-              </button>
+              <h6 class="newsletter-heading"><i class="bi bi-envelope-heart me-2"></i>Nyhetsbrev</h6>
+              <p class="newsletter-desc">Få dagens viktigaste nyheter direkt i inkorgen.</p>
+              <input type="email" class="form-control form-control-sm mb-2 newsletter-input" placeholder="din@epost.se" />
+              <button type="button" class="btn btn-sm w-100 newsletter-btn">Prenumerera</button>
             </div>
           </div>
-
         </div>
       </aside>
-
     </div>
   </main>
 
-  <!-- ════════════════════════════════════
-       FOOTER
-  ════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer class="pt-5 pb-2">
     <div class="container">
       <div class="row g-4">
-
-        <!-- Brand + social media icons / links -->
         <div class="col-md-4">
           <div class="footer-brand">Herman<span>News</span></div>
           <p class="footer-tagline">Oberoende nyheter sedan 1342</p>
-          <p class="footer-about">
-            Herman News är en extremt bra nyhetssida skapad som ett skolprojekt. Allt innehåll är garanterat 100% äkta.
-          </p>
+          <p class="footer-about">Herman News är en extremt bra nyhetssida skapad som ett skolprojekt. Allt innehåll är garanterat 100% äkta.</p>
           <div class="d-flex gap-2 mt-3">
             <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
             <a href="#" class="social-icon" aria-label="X / Twitter"><i class="bi bi-twitter-x"></i></a>
@@ -326,8 +236,6 @@
             <a href="#" class="social-icon" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
           </div>
         </div>
-
-        <!-- Sections -->
         <div class="col-6 col-md-2">
           <p class="footer-heading">Nyheter</p>
           <ul class="footer-links">
@@ -339,8 +247,6 @@
             <li><a href="#">Vetenskap</a></li>
           </ul>
         </div>
-
-        <!-- More sections -->
         <div class="col-6 col-md-2">
           <p class="footer-heading">Mer</p>
           <ul class="footer-links">
@@ -351,8 +257,6 @@
             <li><a href="#">Liverapporter</a></li>
           </ul>
         </div>
-
-        <!-- About -->
         <div class="col-6 col-md-2">
           <p class="footer-heading">Om oss</p>
           <ul class="footer-links">
@@ -364,28 +268,75 @@
             <li><a href="#">Cookies</a></li>
           </ul>
         </div>
-
-        <!-- Contact -->
         <div class="col-6 col-md-2">
           <p class="footer-heading">Kontakt</p>
           <ul class="footer-links">
             <li><a href="#">mail@hermanNews.se</a></li>
             <li><a href="#">+46 1337</a></li>
-            <li class="footer-address">
-              Vägen 1<br>123 45 en stad i Sverige
-            </li>
+            <li class="footer-address">Vägen 1<br>123 45 en stad i Sverige</li>
           </ul>
         </div>
-
       </div>
     </div>
-
-    <!-- Copyright -->
-     <div class="footer-bottom text-center  py-3 mt-4">
-        <p>2026 HermanNews. Alla rättigheter förbehållna.</p>
-     </div>
+    <div class="footer-bottom text-center py-3 mt-4">
+      <p>2026 HermanNews. Alla rättigheter förbehållna.</p>
+    </div>
   </footer>
 
+  <!-- CREATE ARTICLE MODAL -->
+  <div class="modal fade" id="articleModal" tabindex="-1" aria-labelledby="articleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content modal-herman">
+        <div class="modal-header modal-header-herman">
+          <h5 class="modal-title" id="articleModalLabel">
+            <i class="bi bi-newspaper me-2"></i>Skapa ny artikel
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Stäng"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="mb-3">
+            <label for="articleTitle" class="form-label form-label-herman">Rubrik <span class="text-danger">*</span></label>
+            <input type="text" class="form-control form-control-herman" id="articleTitle" placeholder="Skriv artikelns rubrik..." maxlength="200" />
+          </div>
+          <div class="mb-3">
+            <label for="articleCategory" class="form-label form-label-herman">Kategori</label>
+            <select class="form-select form-control-herman" id="articleCategory">
+              <option value="Sverige">Sverige</option>
+              <option value="Världen">Världen</option>
+              <option value="Ekonomi">Ekonomi</option>
+              <option value="Sport">Sport</option>
+              <option value="Kultur">Kultur</option>
+              <option value="Vetenskap">Vetenskap</option>
+              <option value="Teknik">Teknik</option>
+              <option value="Internet">Internet</option>
+              <option value="Arbetsplats">Arbetsplats</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="articleContent" class="form-label form-label-herman">Innehåll <span class="text-danger">*</span></label>
+            <textarea class="form-control form-control-herman" id="articleContent" rows="6" placeholder="Skriv artikelns innehåll här..."></textarea>
+            <div class="form-text text-muted">Endast de första 60 tecknen visas i listan. Hela innehållet visas på artikelsidan.</div>
+          </div>
+          <div class="mb-3">
+            <label for="articleAuthor" class="form-label form-label-herman">Författare</label>
+            <input type="text" class="form-control form-control-herman" id="articleAuthor" placeholder="Ditt namn (valfritt)" />
+          </div>
+          <div id="modalError" class="alert alert-danger d-none py-2"></div>
+        </div>
+        <div class="modal-footer modal-footer-herman">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Avbryt</button>
+          <button type="button" class="btn btn-new-article" onclick="saveArticle()">
+            <i class="bi bi-check-lg me-1"></i>Publicera artikel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 9999;" id="toastContainer"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="articles.js"></script>
 </body>
 </html>
