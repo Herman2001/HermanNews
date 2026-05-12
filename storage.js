@@ -1,10 +1,10 @@
-const STORAGE_KEY = 'herman_articles';
+const STORAGE_KEY = "herman_articles";
 
 /**
  * Hämtar alla artiklar från localStorage
  */
 export function getArticles() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
 }
 
 /**
@@ -18,7 +18,7 @@ export function saveArticles(articles) {
  * Hämtar en specifik artikel baserat på ID
  */
 export function getArticleById(id) {
-  return getArticles().find(a => a.id === id) || null;
+  return getArticles().find((a) => a.id === id) || null;
 }
 
 /**
@@ -26,13 +26,13 @@ export function getArticleById(id) {
  */
 export function updateArticle(updatedArticle) {
   const articles = getArticles();
-  const index = articles.findIndex(a => a.id === updatedArticle.id);
-  
+  const index = articles.findIndex((a) => a.id === updatedArticle.id);
+
   if (index !== -1) {
     articles[index] = updatedArticle;
   } else {
     articles.unshift(updatedArticle);
   }
-  
+
   saveArticles(articles);
 }

@@ -46,11 +46,17 @@ function renderArticle() {
   const meta = document.createElement("p");
   meta.className = "card-meta mb-4";
   meta.append(
-    Object.assign(document.createElement('i'), {className: 'bi bi-person me-1'}),
-    Object.assign(document.createElement('strong'), {textContent: article.author}),
+    Object.assign(document.createElement("i"), {
+      className: "bi bi-person me-1",
+    }),
+    Object.assign(document.createElement("strong"), {
+      textContent: article.author,
+    }),
     " · ",
-    Object.assign(document.createElement('i'), {className: 'bi bi-clock me-1'}),
-    article.date
+    Object.assign(document.createElement("i"), {
+      className: "bi bi-clock me-1",
+    }),
+    article.date,
   );
 
   const content = document.createElement("div");
@@ -83,7 +89,7 @@ function toggleReaction(type) {
     article[type === "like" ? "likes" : "dislikes"]++;
     localStorage.setItem(`vote_${id}`, type);
   }
-  
+
   updateArticle(article);
   renderReactions(article);
 }
@@ -96,35 +102,45 @@ function toggleReaction(type) {
 function renderReactions(article) {
   document.getElementById("like-count").textContent = article.likes || 0;
   document.getElementById("dislike-count").textContent = article.dislikes || 0;
-  
+
   const userVote = localStorage.getItem(`vote_${article.id}`);
-  document.getElementById("like-btn").classList.toggle("active", userVote === "like");
-  document.getElementById("dislike-btn").classList.toggle("active", userVote === "dislike");
+  document
+    .getElementById("like-btn")
+    .classList.toggle("active", userVote === "like");
+  document
+    .getElementById("dislike-btn")
+    .classList.toggle("active", userVote === "dislike");
 }
 
 function renderComments(article) {
   const list = document.getElementById("comments-list");
   const count = document.getElementById("comments-count");
   const comments = article.comments || [];
-  
+
   count.textContent = comments.length;
   list.innerHTML = "";
 
   if (comments.length === 0) {
-    list.innerHTML = '<p class="text-muted fst-italic">Inga kommentarer ännu.</p>';
+    list.innerHTML =
+      '<p class="text-muted fst-italic">Inga kommentarer ännu.</p>';
     return;
   }
 
   comments.forEach((c, i) => {
     const item = document.createElement("div");
     item.className = "comment-item";
-    
+
     const header = document.createElement("div");
     header.className = "comment-header d-flex align-items-center gap-2";
     header.innerHTML = '<i class="bi bi-person-circle comment-avatar"></i>';
-    
-    const author = Object.assign(document.createElement("strong"), {textContent: c.author});
-    const date = Object.assign(document.createElement("span"), {className: "comment-date", textContent: c.date});
+
+    const author = Object.assign(document.createElement("strong"), {
+      textContent: c.author,
+    });
+    const date = Object.assign(document.createElement("span"), {
+      className: "comment-date",
+      textContent: c.date,
+    });
     const delBtn = document.createElement("button");
     delBtn.className = "btn-delete-comment ms-auto";
     delBtn.innerHTML = '<i class="bi bi-x-lg"></i>';
@@ -132,9 +148,9 @@ function renderComments(article) {
 
     header.append(author, date, delBtn);
     const text = Object.assign(document.createElement("p"), {
-      className: "comment-text", 
+      className: "comment-text",
       textContent: c.text,
-      style: "white-space: pre-line"
+      style: "white-space: pre-line",
     });
 
     item.append(header, text);
@@ -159,13 +175,19 @@ function addComment() {
   const comment = {
     author: authorInput.value.trim() || "Anonym",
     text,
-    date: new Date().toLocaleString("sv-SE", { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+    date: new Date().toLocaleString("sv-SE", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    }),
   };
 
   article.comments = article.comments || [];
   article.comments.push(comment);
   updateArticle(article);
-  
+
   authorInput.value = "";
   textInput.value = "";
   renderComments(article);
